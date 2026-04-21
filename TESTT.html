@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+   <form>
+   
+        <h1>오션 스위트 예약</h1>
+        <h5>*당신의 완벽한 휴식을 위한 프리미엄 객실을 예약하세요.</h5>
+
+       
+   
+    <fieldset>
+    <br>
+    <legend>
+        연락처 정보
+    </legend>
+    
+    <label for="user_id">
+        성명 (법적 실명)
+    </label>
+    <br>
+    <input type="text" id="user_id" required)
+    placeholder="실명을 입력하세요."
+    >
+    <br>
+    <br>
+
+    <label>
+        전화번호            
+    </label>
+
+    <br>
+    <input type="tel" required)
+    placeholder="010-000-0000">
+
+    <label>
+        이메일            
+    </label>
+    <input type="email" required)
+    placeholder="example@mail.com."
+    >
+    </fieldset>
+    <br>
+
+
+
+    <fieldset>
+        <legend>
+        예약 상세
+    </legend>
+
+    <br>
+    <label>
+    도착 날짜           
+    </label>
+    <input type="date">
+    <br>
+
+    <label>
+    객실 유형           
+    </label>
+
+  <select id="class">
+        <option value="c">오션뷰 스위트</option>
+        <option value="a">비치프론트 빌라</option>
+        <option value="b">가든 스위트</option>
+    </optgroup>
+</select>
+
+    <br>
+
+    <label>
+    투숙 인원           
+    </label>
+    <input type="number" min="1" max="5" step="1">
+    <br><br>
+
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>
+    추가 옵션
+        </legend>
+    
+        <br>
+        <label>
+        식사서비스:          
+        </label>
+<label>
+<input type="radio" name="eat" value="yes" checked>
+조식포함
+</label>
+<label>
+    <input type="radio" name="eat" value="no">
+    포함 안 함
+    </label>
+
+    <br>
+    <br>
+    <label>
+        <input type="checkbox" value="s">
+        리조트 픽업 서비스
+    </label>
+    <label>
+        <input type="checkbox" value="s">
+        레이트 체크아웃
+    </label>
+    <br>
+    <br>
+    <label>특별 요청사항</label>
+    <br>
+<textarea
+    cols=50
+    rows="5">
+식단 관련 요구나 기타 요청 사항을 적어주세요.
+</textarea>
+
+
+    </fieldset>
+    <br>
+    <input type="button" value="제출하기">
+
+</body>
+</html>

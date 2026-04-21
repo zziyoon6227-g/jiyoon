@@ -1,0 +1,111 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        </head>
+
+
+        <body>
+ 
+            <img src="img/hotel.jpg" alt="호텔">
+
+            <t1> ** 당신의 완벽한 휴식을 위한 프리미엄 객실을 예약하세요.</t1>
+     
+            <form>
+                <fieldset>
+                    <legend>
+                        예약자 기본 정보
+                    </legend>
+                    
+
+                    <legend>
+                        회원ID <input type="text" value="지윤" readonly>
+                    </legend>
+                   
+
+                    <label>
+                    예약자명
+                    <input type="text" placeholder="실명 입력하세요" required> </label><br>
+
+                    <label>
+                    연락처
+                    <input type="tel" placeholder="010-0000-0000" required>  </label><br>
+    
+                    <label>
+                    이메일
+                    <input type="email" placeholder="example.mail.com" required> </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                    예약 상세 정보
+                    </legend>
+
+                    <label for="user_id" required>
+                    체크인 날짜 </label>
+
+                    <input type="date">
+                    <br>
+                    <br>
+                    <label for="user_id">
+                    객실 선택 </label>
+                    <input type="text" list="hotel">
+
+                    <datalist id="hotel">
+                        <option value="더블룸">
+                            <option value="트윈룸">
+                                <option value="오션뷰 스위트">
+                    </datalist>
+                    <br>
+                    <br>
+                    <label for="user_id">
+                    숙박인원 (최대 4인) </label>
+                    <input type="email" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        추가 요청 및 옵션 </legend>
+
+                    <label for="radio" >
+                    조식 서비스:
+                    </label>
+                    <input type="radio" name="y" value="포함" >
+                    포함
+                    <input type="radio" name="y" value="미포함" >
+                    미포함
+                    <br>
+                    <br>
+
+
+                    <label for="user_id">
+                    추가 선택:
+                    </label>
+                
+                    <input type="checkbox" value="픽업서비스"  >
+                    픽업서비스
+                    <input type="checkbox" value="레이트체크아웃"  >
+                    레이트체크아웃
+
+                
+                    <br>
+                    <br>
+                    <label for="user_id">
+                    기타 요청 사항
+                    </label>
+                    <p></p>
+
+
+                   
+                    <textarea
+                    name="기타"
+                    cols="50"
+                    rows="5">
+                    
+                "알러지 유무나 기타 요청 사항을 적어주세요." </textarea>
+
+                </fieldset>
+            <input type="submit" value="예약하기">
+            <input type="submit" value="다시쓰기">
+</form>
+</body>
+</html>
