@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <title>함수</title>
+
+    <style>
+        *{margin: 0; padding: 0;}
+        #galleryZone {text-align: center;}
+        #galleryZone input[type="image"]{margin:0 8px;}
+    </style>
+        
+    <script>
+        var num = 1;
+        function gallery(direct) {
+        if(direct) { /*if문에서 1이면 참이기에 if문으로 밑에, 0이면 거짓이기에 else문으로 이동*/
+        if(num == 8) return; /*8이면 돌아가기 아니면 더하기*/
+        num++;
+        } else {
+        if(num == 1) return;
+        num--;
+        }
+        
+        var imgTag = document.getElementById("photo");
+        imgTag.setAttribute("src","image/pic_" + num + ".jpg");
+        }
+    </script>
+        
+        
+    </head>
+    <body>
+
+        <div id="galleryZone">
+        <p><img src="image/pic_1.jpg" id="photo" alt=""></p>
+        <p>
+        <button onclick="gallery(0)">이전</button>
+        <button onclick="gallery(1)">다음</button>
+        </p>
+        </div>
+
+    </body>
+    </html>

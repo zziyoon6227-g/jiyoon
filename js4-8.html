@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>팝업창 나타내기</title>
+    <script language="javascript">
+        
+            function open_win(){
+                var width = 1000;
+                var height = 2000;
+                var left = screen.width / 2 - width / 2;
+                var top = screen.height / 2 - height / 2;
+                var mywin = window.open('http://www.naver.com', 'popup',
+                'top='+top+',left='+left+', width='+width+', height='+height+', scrollbars=yes');
+}
+           
+
+        
+    </script>
+</head>
+<body>
+    <input type="button" value="네이버 사이트 새창으로 띄우기"
+    onclick="javascript:open_win()"/>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 함수 종합 실습</title> 
+    <style>
+        #copyBtn { 
+            padding: 10px 20px; /*버튼 내부 상하 10px, 좌우 20px*/
+            background-color: #4CAF50; /*버튼 컬러*/
+            color: white; /*버튼 내부 글자색*/
+            border: none;   /*버튼 경계선*/
+            border-radius: 5px; /*경계선 두께*/
+            cursor: pointer; /*버튼에 마우스를 올리면 커서가 손모양으로 바뀜*/
+            margin-bottom: 20px; /*버튼 아래 공간*/
+        }
+        #copyBtn:hover { background-color: #45a049; } /*버튼에 마우스를 올려놨을때 색깔*/
+    </style>
+</head>
+<body>
+
+    <button id="copyBtn" onclick="copyCode()">코드 복사하기</button> <!--버튼 멘트-->
+
+    <script id="practice-code"> 
+        var count = 0; /*시스템 접속 횟수 초깃값*/
+
+        initSystem();
+
+        function initSystem() {
+            count++; /*시스템 접속 횟수 0에서 1로 증가*/
+            document.write("<h3>--- 시스템 접속 횟수: " + count + " ---</h3>");
+
+            function User(id, point) {
+                this.userId = id; /*사용자 이름*/
+                this.userPoint = point; /*사용자 포인트*/
+                this.displayInfo = function() {
+                    return "사용자: " + this.userId + " (현재 포인트: " + this.userPoint + ")"; 
+                };
+            }
+
+            var inputId = prompt("아이디를 입력하세요.", "guest"); /*아이디 입력창*/
+            var newUser = new User(inputId, 1000); /*새로운 사용자 포인트 초깃값*/
+            
+            document.write(newUser.displayInfo() + "<br>"); /*위의 'displayInfo'출력 후 줄바꿈*/
+
+            var addValue = prompt("추가할 포인트를 입력하세요.", "0"); /*추가 포인트 입력창*/
+
+            if (isNaN(addValue)) { /*추가 포인트가 숫자이면 false, 문자면 true*/
+                alert("숫자만 입력 가능합니다."); /*addValue가 문자라 true 발생 ->포인트 입력창에 문자 입력시 경고창*/
+            } else { /*추가 입력 포인트가 숫자면 else로 진행*/
+                var pointAmount = parseInt(addValue);
+                
+                document.write("포인트 적립 시작... "); 
+                startTimer(3);
+
+                var finalPoint = calculatePoint(newUser.userPoint, pointAmount); /*현재 포인트 + 추가 포인트를 finalPoint에 넣음*/
+                document.write("<br><strong>최종 포인트: " + finalPoint + "</strong>"); /*추가포인트+현재 포인트 더하기 (글꼴굵게강조)*/
+            }
+        }
+
+        function calculatePoint(current, add) {
+            var processMsg = "계산 중..."; /*콘솔창에 뜨는 문구*/
+            console.log(processMsg);
+            return current + add; /*현재 포인트와 추가 포인트 더하기*/
+        }
+
+        function startTimer(n) {
+            if (n == 0) {
+                document.write(" 완료!"); /*3부터 시작해서 0이 되면 종료 후 "완료!" 문구 생성*/
+                return; 
+            }
+            document.write(n + " "); /* 3부터 1까지 출력*/
+            startTimer(n - 1); /*3부터 -1해서 다시 if문부터 진행*/
+        }
+
+        function copyCode() { /*코드 복사하기 기능 넣기*/
+            const code = document.getElementById('practice-code').innerText; /* 상단 'practice-code'아래부터 출력*/
+            navigator.clipboard.writeText(code).then(() => {
+                alert("코드가 클립보드에 복사되었습니다!"); /*코드 복사하기 클릭시 생성되는 창*/
+            });
+        }
+    </script>
+</body>
+</html>

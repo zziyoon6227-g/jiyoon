@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>제어문 & 객체 통합 실습</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; text-align: center; padding-top: 50px; }
+        .result { font-weight: bold; color: blue; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+<h1>행운의 경품 추첨</h1>
+
+
+<script>
+var userName = prompt("당신의 이름을 입력하세요.","");
+var today = new Date();
+var nowYear = today.getFullYear();
+var nowMonth = today.getMonth() + 1;
+var nowDate = today.getDate();
+document.write("<h3>안녕하세요, " + userName +" 님!</h3>");
+document.write("오늘은 " + nowYear + "년 " + nowMonth + "월 " + nowDate + "일입니다.");
+document.write("<hr>");
+
+var gift = ["맥북", "아이패드", "에어팟", "스타벅스 커피", "다음 기회에..."];
+document.write("<strong>추첨 시스템 가동: </strong>");
+for(i=1; i<4; i++){
+    document.write(i+"...");
+}document.write("완료!")
+
+var lucky = Math.floor(Math.random()*gift.length);
+var eventResult = gift[lucky];
+
+if(lucky == 4){
+document.write("아쉽네요! 결과는 ["+eventResult+"] 입니다.")
+}else{
+    document.write("축하합니다! 결과는 ["+eventResult+"] 입니다.")
+}
+
+document.write("<hr>현재 접속 주소: <br>"+location.pathname+ "입니다.");
+        
+        
+</script>
+    
+</body>
+</html>
