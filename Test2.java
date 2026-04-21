@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Test {
+public class Test2 {
     public static void main(String[] args)  throws Exception{
         Scanner scanner =  new Scanner(System.in);
 
@@ -17,26 +17,21 @@ public class Test {
 
         int result = 0;
 
-        switch(op){
-            case "+":
-            result = x+y;
-            System.out.println("x+y: "+result);
-            break;
-
-            case "-":
-            result = x-y;
-            System.out.println("x-y: "+result);
-            break;
-
-            case "*":
-            result = x*y;
-            System.out.println("x*y: "+result);
-            break;
-
-            case "/":
-            result = x/y;
-            System.out.println("x/y: "+result);
-            break;
+       if(op.equals("+")){
+            result=x+y;
+            System.out.println("x+y: " +result);
+        }
+        if(op.equals("-")){
+            result=x-y;
+            System.out.println("x-y: " +result);
+        }
+        if(op.equals("*")){
+            result=x*y;
+            System.out.println("x*y: " +result);
+        }
+        if(op.equals("/")){
+            result=x/y;
+            System.out.println("x/y: " +result);
         }
     }
     }
